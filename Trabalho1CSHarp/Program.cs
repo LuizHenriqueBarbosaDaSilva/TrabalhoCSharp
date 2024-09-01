@@ -1,4 +1,5 @@
-﻿using Trabalho1CSHarp.UteisMenu;
+﻿using System.Numerics;
+using Trabalho1CSHarp.UteisMenu;
 // 7) Fatoriais de 1 até 10 (Equipe 4 Método com retorno / Ordenar vetor de N elementos Método estático)
 int op32 = 0;
 
@@ -48,6 +49,39 @@ do // Usando a estrutura de loop do {} while(condição);
         // Se op32 == 4 acessara a classe Ordenador de vetores para ordernar
         case 4:
             Console.WriteLine("Acessando Ordenador de vetores");
+            Console.Write("Informe o tamanho da lista:");
+            int n = int.Parse(Console.ReadLine());
+            while (true)
+            {
+                int[] vetorFora = new int[n];
+                Console.Write("\nInforme os numeros agora todos juntos:");
+                String[] Caixa = Console.ReadLine().Split(' ');
+                if (Caixa.Length == n)
+                {
+                    for (int i = 0; i < n; i++)
+                    {
+                        vetorFora[i] = int.Parse(Caixa[i]);
+                    }
+                    int[] vetorOrdenado = Ordenador.Ordenacao(vetorFora);
+                    Console.Write("Vetor Ordenado -> [");
+                    for (int i = 0; i < vetorOrdenado.Length; ++i)
+                    {
+                        Console.Write($"{vetorOrdenado[i]}");
+                        if (i != vetorOrdenado.Length - 1)
+                        {
+                            Console.Write(",");
+                        }
+                    }
+                    Console.Write("]");
+                    Thread.Sleep(100000);
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Foi dado mais numeros do que o permitido");
+                }
+                
+            }   
             break;
         // Se op32 == 5 acessara o Jogo da velha: A REDENÇÃO 3000 Tm
         case 5: 
