@@ -24,61 +24,63 @@ do // Usando a estrutura de loop do {} while(condição);
     op32 = int.Parse(Console.ReadLine());
     switch (op32)
     {
-        // Se op32 == 0 ira encerrar o programa
+        // Se op32 == 0 ira encerrar o programa.
         case 0:
-            Console.WriteLine("Fechando o programa");
+            Console.WriteLine("Fechando o programa"); // Avisa que ira fechar o programa
             Thread.Sleep(2000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 2 mil equivale a 2 segundos
             break;
-        // Se a op32 == 1 acessara a classe para somar numeros
+        // Se a op32 == 1 acessara a classe para somar numeros.
         case 1:
-            Console.WriteLine("Acessando Soma!");
+            Console.WriteLine("Acessando Soma!"); // Avisa o usuario que esta acessando a classe  Soma.
             break;
-        // Se op32 == 2 acessara a classe da conversão para converter metodos em milimetros
+        // Se op32 == 2 acessara a classe da conversão para converter metodos em milimetros.
         case 2:
-            Console.WriteLine("Acessando Conversão");
+            Console.WriteLine("Acessando Conversão"); // Avisa o usuario que esta acessando a classe  Conversão.
             break;
-        // Se op32 == 3 acessara a classe fatorial para fatorar
+        // Se op32 == 3 acessara a classe fatorial para fatorar.
         case 3:
-            Console.WriteLine("Acessando Fatorias!");
-            for (int i = 1; i < 11; i++)
+            Console.WriteLine("Acessando Fatorias!"); // Avisa o usuario que esta acessando a classe Fatorial
+            for (int i = 1; i < 11; i++) // laço contado de 1 ate 10!
             {
-                Console.Write($"O fatorial de {i} é:{Fatorial.CalcularFatorial(i)}\n");
+                Console.Write($"O fatorial de {i} é:{Fatorial.CalcularFatorial(i)}\n"); // Mostra para o usuario fatorial de 1 ate 10.
             }
-            Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos
+            Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos.
             break;
-        // Se op32 == 4 acessara a classe Ordenador de vetores para ordernar
+        // Se op32 == 4 acessara a classe Ordenador de vetores para ordernar.
         case 4:
-            Console.WriteLine("Acessando Ordenador de vetores");
-            Console.Write("Informe o tamanho da lista:");
-            int n = int.Parse(Console.ReadLine());
-            while (true)
+            Console.WriteLine("Acessando Ordenador de vetores"); // Avisa o usuario que esta acessando a classe Ordenador.
+            Console.Write("Informe o tamanho da lista:"); // Pede para o usuario informar o tamanho da vetor!
+            int n = int.Parse(Console.ReadLine()); // a varivavel n ira se tornar o valor informado
+            while (true) // aqui começa um loop com um while para informar os numeros da vetor com um limite de n, itens dentro da vetor. 
             {
-                int[] vetorFora = new int[n];
-                Console.Write("\nInforme os numeros agora todos juntos:");
-                String[] Caixa = Console.ReadLine().Split(' ');
-                if (Caixa.Length == n)
+                int[] vetorFora = new int[n]; // Aqui cria o vetor apartir da variavel n!                                       tamanho do vetor: 6!
+                Console.Write("\nInforme os numeros agora todos juntos:"); // Informa ao usuario que ele precisa dar todos os valores exemplo: 7 8 1 4 5 6.
+                String[] caixa = Console.ReadLine().Split(' '); // caixa ira separar os numeros em itens devido ao split() que tem um espaço vazio " ".
+                if (caixa.Length == n) // se caixa.Lenght for igual a n então entra na condição.
                 {
-                    for (int i = 0; i < n; i++)
+                    for (int i = 0; i < n; i++) // laço contado de i ate n!
                     {
-                        vetorFora[i] = int.Parse(Caixa[i]);
+                        vetorFora[i] = int.Parse(caixa[i]); // passa os valor de caixa[i] para o vetorFora tornando os inteiros antes de passar
                     }
-                    int[] vetorOrdenado = Ordenador.Ordenacao(vetorFora);
-                    Console.Write("Vetor Ordenado -> [");
-                    for (int i = 0; i < vetorOrdenado.Length; ++i)
+                    int[] vetorOrdenado = Ordenador.Ordenacao(vetorFora); // passa o vetorFora para dentro do metodo Ordenacao() e quando for concluido passa o vetor;
+                                                                         // ordenado para uma nova variavel tipo vetor, nomeada vetorOrdenado! 
+                    Console.Write("Vetor Ordenado -> ["); // aqui começar a exibição dos itens dentro da lista.
+                    for (int i = 0; i < vetorOrdenado.Length; ++i) // laço contado de i ate vetorOrdenado.Length. Nota: Length pega o tamanho do vetor!
                     {
-                        Console.Write($"{vetorOrdenado[i]}");
-                        if (i != vetorOrdenado.Length - 1)
+                        Console.Write($"{vetorOrdenado[i]}"); // aqui ira printar os itens do vetor a cada passo
+                        if (i != vetorOrdenado.Length - 1)   // se o vetorOrdenado for diferente da ultima posição ira imprimir uma ","
                         {
-                            Console.Write(",");
+                            Console.Write(","); // imprimi a ","
                         }
                     }
-                    Console.Write("]");
-                    Thread.Sleep(100000);
+                    Console.Write("]"); // no fim do laço contado fecha a exibição da lista com "]" 
+                    Thread.Sleep(10000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 10 mil equivale a 10 segundos.
+                    Console.ReadLine();
                     break;
                 }
-                else
+                else // Se a condição de cima der falso então entra nessa
                 {
-                    Console.WriteLine("Foi dado mais numeros do que o permitido");
+                    Console.WriteLine("Foi dado mais numeros do que o permitido"); // Aqui avisa o usuario que os numeros foram alem do limite de N
                 }
                 
             }   
