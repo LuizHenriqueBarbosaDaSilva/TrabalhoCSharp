@@ -11,12 +11,10 @@ do // Usando a estrutura de loop do {} while(condição);
         | Menu             | Bem Vindo!                   |
         +-=-=-=-=-=-=-=-=-=+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
         | 0) Sair                                         |
-        | 1) Acessar Somar Numeros                        |
-        | 2) Acessar Conversão de metros a milimetros     |
-        | 3) Acessar Fatorias                             |
-        | 4) Acessar Ordenar vetor de N elementos         |  
-        | 5) Acessar JOGO DA VELHA: A REDENÇÃO 3000 Tm    |
-        | 6) Creditos aos desenvolvedores                 |
+        | 1) Acessar Fatorias                             |
+        | 2) Acessar Ordenar vetor de N elementos         |  
+        | 3) Acessar JOGO DA VELHA: A REDENÇÃO 3000 Tm    |
+        | 4) Creditos aos desenvolvedores                 |
         |                                                 |
         +-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
         Informe sua entrada:
@@ -29,25 +27,47 @@ do // Usando a estrutura de loop do {} while(condição);
             Console.WriteLine("Fechando o programa"); // Avisa que ira fechar o programa
             Thread.Sleep(2000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 2 mil equivale a 2 segundos
             break;
-        // Se a op32 == 1 acessara a classe para somar numeros.
-        case 1:
-            Console.WriteLine("Acessando Soma!"); // Avisa o usuario que esta acessando a classe  Soma.
-            break;
-        // Se op32 == 2 acessara a classe da conversão para converter metodos em milimetros.
-        case 2:
-            Console.WriteLine("Acessando Conversão"); // Avisa o usuario que esta acessando a classe  Conversão.
-            break;
         // Se op32 == 3 acessara a classe fatorial para fatorar.
-        case 3:
-            Console.WriteLine("Acessando Fatorias!"); // Avisa o usuario que esta acessando a classe Fatorial
-            for (int i = 1; i < 11; i++) // laço contado de 1 ate 10!
+        case 1:
+            Console.Write($"""
+        +-=-=-=-=-=-=-=-=-=+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+        | Selecione fatorial!                             |
+        +-=-=-=-=-=-=-=-=-=+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+        | 0) Sair                                         |
+        | 1) Acessar Fatorial de 1 ate 10                 |
+        | 2) Acessar Fatorial de N numeros (limite 50)    |  
+        |                                                 |
+        +-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
+        Informe sua entrada:
+        """);
+            int op86 = int.Parse(Console.ReadLine());
+            switch (op86)
             {
-                Console.Write($"O fatorial de {i} é:{Fatorial.CalcularFatorial(i)}\n"); // Mostra para o usuario fatorial de 1 ate 10.
+                case 0:
+                    Console.WriteLine("Saindo do modulo fatorias");
+                    break;
+                case 1:
+                    Fatorial fat = new Fatorial(); // Instancia a classe fatorial para um objeto denominado fat
+                    Console.WriteLine("Acessando Fatorias!"); // Avisa o usuario que esta acessando a classe Fatorial
+                    for (int i = 1; i < 11; i++) // laço contado de 1 ate 10!
+                    {
+                        Console.Write($"O fatorial de {i} é:{fat.CalcularFatorialFOR(i)}\n"); // Mostra para o usuario fatorial de 1 ate 10.
+                    }
+                    Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos.
+                    break;
+                case 2: 
+                   Console.WriteLine("Digite o numero que deseja fazer fatorial");// Ira pedir o numero do fatorial!  
+                   int num = int.Parse(Console.ReadLine()); // passa uma string, convertendo ela para int 
+
+                   Fatorial calc = new Fatorial(); // Instancia a classe fatorial para um objeto denominado calc
+
+                    Console.WriteLine($"O fatorial de {num} é: {calc.CalcularFatorial(num)}"); // exibe o resultado do fatorial de N
+                   break;
+
             }
-            Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos.
             break;
         // Se op32 == 4 acessara a classe Ordenador de vetores para ordernar.
-        case 4:
+        case 2:
             Console.WriteLine("Acessando Ordenador de vetores"); // Avisa o usuario que esta acessando a classe Ordenador.
             Console.Write("Informe o tamanho da lista:"); // Pede para o usuario informar o tamanho da vetor!
             int n = int.Parse(Console.ReadLine()); // a varivavel n ira se tornar o valor informado
@@ -74,8 +94,8 @@ do // Usando a estrutura de loop do {} while(condição);
                         }
                     }
                     Console.Write("]"); // no fim do laço contado fecha a exibição da lista com "]" 
-                    Thread.Sleep(10000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 10 mil equivale a 10 segundos.
-                    Console.ReadLine();
+                    Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos.
+
                     break;
                 }
                 else // Se a condição de cima der falso então entra nessa
@@ -86,9 +106,9 @@ do // Usando a estrutura de loop do {} while(condição);
             }   
             break;
         // Se op32 == 5 acessara o Jogo da velha: A REDENÇÃO 3000 Tm
-        case 5: 
+        case 3: 
             Console.WriteLine("Acessando JOGO DA VELHA: A REDENÇÃO 3000 Tm"); 
-            Thread.Sleep(4000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 4 mil equivale a 4 segundos
+            Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 4 mil equivale a 4 segundos
             JogoDaVelha Joguinho = new JogoDaVelha(); // Faz com que o objeto Joguinho seja um objeto da classe JogoDaVelha();
             int op64, linha, coluna; // aqui definimos que op432,linha e coluna são inteiros assim so precisamos usa-las sem definirmos para frente
             var registroABC = new Dictionary<char, int> // Esse dicionario nos ajuda a fazer a marcação la embaixo por base das chaves serem o caracter e os numeros da linha virem depois
@@ -151,7 +171,7 @@ do // Usando a estrutura de loop do {} while(condição);
                         {
                             while (true) // isso e so pra garantir que a linha e coluna sejam corretamente informados no padrao  (1-3) e (A-C)!
                             {
-                                Console.Write("Informe a linha (1-3)  e a coluna (A-C) :");    // so informa o usuario para digitar entre (1-3) e (A-C).
+                                Console.Write("Informe a coluna (1-3)  e a linha (A-C) :");    // so informa o usuario para digitar entre (1-3) e (A-C).
                                 string informacaoBox = Console.ReadLine().ToUpper();  // O informacaoBox ira receber do usuario se ele quer ser 1,2,3 junto de A,B,C;
                                                                                       // caso o usuario esteja com o caps desativado ira sempre ser usado o ToUpper();
                                                                                       // que e um metodo para deixar tudo no uppercase!  
@@ -179,14 +199,14 @@ do // Usando a estrutura de loop do {} while(condição);
                         else if (marca == 0) // se a marca for igual a 0 então permite a entrada para avisar o usuario!
                         {
                             Console.WriteLine(">    Não foi possivel fazer um ação devido cerquilha não existir!");
-                            Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundos.
+                            Thread.Sleep(1000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundos.
                         }
 
                         break;
                     // Caso seja informado um numero fora das opções atuais no menu ira jogar para default caso tenha o default!
                     default: 
                         Console.WriteLine(">    A opção selecionada não exise no menu atual!"); 
-                        Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundos.
+                        Thread.Sleep(1000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundos.
                         break;
                 }
 
@@ -203,9 +223,10 @@ do // Usando a estrutura de loop do {} while(condição);
 |                Total de partidas: {Joguinho._contadorPartidas} {"|".PadLeft(13)}
 +-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
 """);
+            Thread.Sleep(3000);
             break;
         // Se op32 == 6 acessara os desenvolvedores!
-        case 6: 
+        case 4: 
             Console.Clear(); // Limpa a  a cada conclusao do loop apos usar um metodo ou errar o digito.
             Console.WriteLine("""
                 +-=-=-=-=-=-=-=-=-=+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+

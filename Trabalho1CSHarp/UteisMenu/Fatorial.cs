@@ -8,7 +8,8 @@ namespace Trabalho1CSHarp.UteisMenu
 {
     public class Fatorial()
     {
-        public static int CalcularFatorial(int _num1) // tem o argumento _num1 que ira ser usado para fazer o fatorial!
+        // Fatorial do Luiz
+        public int CalcularFatorialFOR(int _num1) // tem o argumento _num1 que ira ser usado para fazer o fatorial!
         {
             if (_num1 == 1) // como e de 1 ate 10 e so retornamos 1 caso o numero passado para o argumento seja 1 então entra nessa condição!
             {
@@ -16,7 +17,25 @@ namespace Trabalho1CSHarp.UteisMenu
             }
             else // Se argumento passado não for igual a 1 então entra nessa condição!
             {
-                return _num1 * CalcularFatorial(_num1 - 1); // Usando a recursividade nos conseguimos fazer o fatorial!
+                return _num1 * CalcularFatorialFOR(_num1 - 1); // Usando a recursividade nos conseguimos fazer o fatorial!
+            }
+        }
+        // Fatorial do Weber
+        public string CalcularFatorial(int _numero) // Tem o argumento _numero que ira ser usado para fazer o fatorial!
+        {
+            if (_numero < 0)
+            {
+                return "O número não pode ser negativo."; // Retorna uma mensagem avisando que o numero nao pode ser negativo!
+
+            }
+            else
+            {
+                int _fatorial = 1;
+                for (int i = 2; i <= _numero; i++)
+                {
+                    _fatorial *= i;
+                }
+                return _fatorial.ToString();
             }
         }
     }

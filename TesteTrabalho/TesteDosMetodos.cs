@@ -4,11 +4,14 @@ namespace TesteTrabalho
     [TestClass]
     public class TesteDosMetodos
     {
+        // Teste do Luiz
         [TestMethod]
         public void TestandoFatorialDe5()
         {
-            // Cenario, Ação & Teste
-            Assert.AreEqual(120,Fatorial.CalcularFatorial(5), "O fatorial de 5 deveria dar 120!");
+            // Cenario
+            Fatorial fat = new Fatorial();
+            //Ação & Teste
+            Assert.AreEqual(5040, fat.CalcularFatorialFOR(7), "O fatorial de 5 deveria dar 120!");
         }
         [TestMethod]
         public void TestandoOrdenacao()
@@ -18,6 +21,31 @@ namespace TesteTrabalho
             int[] vetorFora = { 8, 6, 5, 7, 4, 1 };
             // Ação & Teste
             CollectionAssert.AreEqual(resultado, Ordenador.Ordenacao(vetorFora), "A lista não foi ordenada corretamente!");
+        }
+        // Teste do weber
+        [TestMethod]
+        public void TestFatorial()
+        {
+            //cenário
+            var calc = new Fatorial();
+            int num = 5 ;
+            string resultado;
+            //ação
+            resultado = calc.CalcularFatorial(num);
+            //teste
+            Assert.AreEqual("120", resultado);
+        }
+        [TestMethod]
+        public void TestFatorial2()
+        {
+            //cenário
+            var calc = new Fatorial();
+            int num = 10;
+            string resultado;
+            //ação
+            resultado = calc.CalcularFatorial(num);
+            //teste
+            Assert.AreEqual("3628800", resultado);
         }
     }
 }

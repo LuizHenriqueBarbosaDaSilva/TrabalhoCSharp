@@ -57,7 +57,7 @@ namespace Trabalho1CSHarp.UteisMenu
     """);   // Segundo menu quando o jogador inicia uma partida ele e em diante sera esse menu que mostra a cerquilha!
             }
         }
-        public void IniciarOuReniciarJogo()
+        public void IniciarOuReniciarJogo() // O metodo InciarOuReniciarJogo ira reniciar ou iniciar o jogo a chamando ele!
         {
             for (int i = 0; i < 3; i++) // Laço contado de I que serve para ser a linha.
             {
@@ -79,7 +79,7 @@ namespace Trabalho1CSHarp.UteisMenu
             {
                 _contadorPartidas++; // Incrementa +1 no contadorPartidas.
             }
-            Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundo.
+            Thread.Sleep(2000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 2 mil equivale a 2 segundo.
         }
         public void Jogadores(string marcadorPlayer) // O metodo Jogadores exige o marcadorPlayer para ser executado.
         {
@@ -87,13 +87,10 @@ namespace Trabalho1CSHarp.UteisMenu
             if (marcadorPlayer == "X") // Se o marcadorPlayer for X ira passar por aqui.
             {
                 _pIa = "O"; // Passa então para a Ia que seu marcador e O, ja que o marcadorPlayer e X!
-
-
             }
             else if (marcadorPlayer == "O") // Se o marcadorPlayer for O ira passar por aqui.
             {
                 _pIa = "X"; // Passa então para a Ia que seu marcador e X, ja que o marcadorPlayer e O!
-
             }
             Console.WriteLine($">    Voce escolheu {_p1} então a Ia ira ficar com {_pIa}"); // Informa o usuario sobre sua escolha e que a Ia ficara com a outra.
             Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundo.
@@ -123,7 +120,7 @@ namespace Trabalho1CSHarp.UteisMenu
                         IniciarOuReniciarJogo();  // Assim que uma partida acaba chamamos o metodo IniciarOuReniciarJogo para reniciar a partida!
                         _contadorVitoriasP1++;    // incrementa +1 no contadorVitoriasP1.
                     }
-                    else if ((VerificaVencedor(_pIa)))  // Começa a verificar o vencedor com o metodo VerificarVencedor(), aqui estamos passando pIa(Ia).
+                    else if (VerificaVencedor(_pIa))  // Começa a verificar o vencedor com o metodo VerificarVencedor(), aqui estamos passando pIa(Ia).
                     {
                         Console.WriteLine($">    IA ({_pIa}) venceu!"); // Avisa o jogador que ele perdeu
                         Thread.Sleep(3000);        // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundo.
@@ -143,7 +140,7 @@ namespace Trabalho1CSHarp.UteisMenu
         private void MarcarPosicaoIA() // o metodo MarcarPosicaoIa faz uso da biblioteca random que esta em um objeto declarado acima como rand!
         {
             Console.WriteLine(">    a Ia esta escolhendo o proximo passo!"); // Avisa o jogador que a ia esta na sua vez de marcar
-            Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundo.
+            Thread.Sleep(2000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 3 mil equivale a 3 segundo.
             int _tentativas = 0; // Tentativas esta aqui para justamente limitar quantas chances a ia tem de fazer uma marcação na cerquilha
             while (_tentativas < 10) // como descrito ali em cima estamos limitando o movimento da ia para não ficar em um loop infinito
             {
