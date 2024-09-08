@@ -27,7 +27,7 @@ do // Usando a estrutura de loop do {} while(condição);
             Console.WriteLine("Fechando o programa"); // Avisa que ira fechar o programa
             Thread.Sleep(2000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 2 mil equivale a 2 segundos
             break;
-        // Se op32 == 3 acessara a classe fatorial para fatorar.
+        // Se op32 == 1 acessara a classe fatorial para fatorar.
         case 1:
             Console.Write($"""
         +-=-=-=-=-=-=-=-=-=+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-+
@@ -61,12 +61,13 @@ do // Usando a estrutura de loop do {} while(condição);
 
                    Fatorial calc = new Fatorial(); // Instancia a classe fatorial para um objeto denominado calc
 
-                    Console.WriteLine($"O fatorial de {num} é: {calc.CalcularFatorial(num)}"); // exibe o resultado do fatorial de N
+                   Console.WriteLine($"O fatorial de {num} é: {calc.CalcularFatorial(num)}"); // exibe o resultado do fatorial de N
+                   Thread.Sleep(5000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 5 mil equivale a 5 segundos.
                    break;
 
             }
             break;
-        // Se op32 == 4 acessara a classe Ordenador de vetores para ordernar.
+        // Se op32 == 2 acessara a classe Ordenador de vetores para ordernar.
         case 2:
             Console.WriteLine("Acessando Ordenador de vetores"); // Avisa o usuario que esta acessando a classe Ordenador.
             Console.Write("Informe o tamanho da lista:"); // Pede para o usuario informar o tamanho da vetor!
@@ -105,7 +106,7 @@ do // Usando a estrutura de loop do {} while(condição);
                 
             }   
             break;
-        // Se op32 == 5 acessara o Jogo da velha: A REDENÇÃO 3000 Tm
+        // Se op32 == 3 acessara o Jogo da velha: A REDENÇÃO 3000 Tm
         case 3: 
             Console.WriteLine("Acessando JOGO DA VELHA: A REDENÇÃO 3000 Tm"); 
             Thread.Sleep(3000); // ira esperar um pouco de segundos devido ao metodo Thread.Sleep() onde 4 mil equivale a 4 segundos
@@ -225,7 +226,7 @@ do // Usando a estrutura de loop do {} while(condição);
 """);
             Thread.Sleep(3000);
             break;
-        // Se op32 == 6 acessara os desenvolvedores!
+        // Se op32 == 4 acessara os desenvolvedores!
         case 4: 
             Console.Clear(); // Limpa a  a cada conclusao do loop apos usar um metodo ou errar o digito.
             Console.WriteLine("""
