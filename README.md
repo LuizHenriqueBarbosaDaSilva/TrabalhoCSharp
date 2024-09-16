@@ -5,7 +5,7 @@ Classes do Trabalho
     - Metodos:
         * CalcularFatorial de 1 ate 10
         * CalcularFatorial de um numero especifico
-        * Ordenação por
+        * Ordenação por inserção
   - Ordenador de N numeros em lista
 Classes de desafio
   - Jogo da Velha
