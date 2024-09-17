@@ -11,7 +11,7 @@ namespace TesteTrabalho
             // Cenario
             Fatorial fat = new Fatorial();
             //Ação & Teste
-            Assert.AreEqual(5040, fat.CalcularFatorialFOR(7), "O fatorial de 7 deveria dar 120!");
+            Assert.AreEqual(5040, fat.CalcularFatorialFOR(7), "O fatorial de 7 deveria dar 5040!");
         }
         [TestMethod]
         public void TestandoOrdenacao()
