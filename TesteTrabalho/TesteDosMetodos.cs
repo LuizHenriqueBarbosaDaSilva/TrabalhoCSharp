@@ -6,12 +6,12 @@ namespace TesteTrabalho
     {
         // Teste do Luiz
         [TestMethod]
-        public void TestandoFatorialDe5()
+        public void TestandoFatorialDe7()
         {
             // Cenario
             Fatorial fat = new Fatorial();
             //Ação & Teste
-            Assert.AreEqual(5040, fat.CalcularFatorialFOR(7), "O fatorial de 5 deveria dar 120!");
+            Assert.AreEqual(5040, fat.CalcularFatorialFOR(7), "O fatorial de 7 deveria dar 120!");
         }
         [TestMethod]
         public void TestandoOrdenacao()

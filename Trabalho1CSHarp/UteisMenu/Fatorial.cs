@@ -33,7 +33,7 @@ namespace Trabalho1CSHarp.UteisMenu
                 int _fatorial = 1; // Aqui o _fatorial e 1.
                 for (int i = 2; i <= _numero; i++)  // então i sera 2 e ira se acresentar ate ser maior ou igual o numero dado.
                 {
-                    _fatorial *= i; // Fatorial se automultiplica com i assim levando ao resultado de um fatorial.
+                    _fatorial *=  i; // Fatorial se automultiplica com i assim levando ao resultado de um fatorial.
                 }
                 return _fatorial.ToString(); // depois do for _fatorial e retornado como string!
             }

@@ -1,6 +1,5 @@
 ﻿using System.Numerics;
 using Trabalho1CSHarp.UteisMenu;
-// 7) Fatoriais de 1 até 10 (Equipe 4 Método com retorno / Ordenar vetor de N elementos Método estático)
 int op32 = 0;
 
 do // Usando a estrutura de loop do {} while(condição);
